@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  </head>
+  <body>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <script>
+      // Create new chart instance
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+          ],
+          datasets: [
+            {
+              label: "Sales",
+              data: [200, 300, 400, 500, 600, 700, 800],
+              borderColor: "red",
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            customDraw: function (chart) {
+              var ctx = chart.ctx;
+              var chartArea = chart.chartArea;
+
+              // Draw a rectangle
+              ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
+              ctx.fillRect(
+                chartArea.left,
+                chartArea.top,
+                chartArea.right - chartArea.left,
+                chartArea.bottom - chartArea.top
+              );
+            },
+          },
+        },
+      });
+
+      // Add mousemove event listener to canvas
+      document
+        .getElementById("myChart")
+        .addEventListener("mousemove", function (event) {
+          // Get mouse position relative to canvas
+          var rect = event.target.getBoundingClientRect();
+          var mouseX = event.clientX - rect.left;
+          var mouseY = event.clientY - rect.top;
+
+          // Check if mouse is inside the rectangle
+          if (
+            mouseX >= myChart.chartArea.left &&
+            mouseX <= myChart.chartArea.right &&
+            mouseY >= myChart.chartArea.top &&
+            mouseY <= myChart.chartArea.bottom
+          ) {
+            console.log("Mouse is inside the rectangle");
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+.part3 {
+  padding-top: 5vh;
+  opacity: 0; /*0*/
+  /* background-color: yellow; */
+  animation: movepart3 4s;
+  animation-fill-mode: forwards;
+  z-index: 1;
+  position: relative;
+  padding-top: 1vh;
+}
+
+@keyframes movepart3 {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.part3LogoFWD {
+  max-width: 250px !important;
+}
+
+.detailsFWD {
+  line-height: 2;
+  text-align: justify;
+}
+
+.part3ClickableLink:hover {
+  cursor: pointer;
+  color: blue;
+}

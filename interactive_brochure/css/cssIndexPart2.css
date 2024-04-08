@@ -1,0 +1,116 @@
+.part2 {
+  opacity: 0; /*0*/
+  /* background-color: yellow; */
+  animation: movepart2 4s;
+  animation-fill-mode: forwards;
+  z-index: 1;
+  position: relative;
+  padding-top: 1vh;
+}
+
+@keyframes movepart2 {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.part2Navbar {
+  max-height: 500px;
+}
+
+.logoDragonNav {
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.part2NavbarLogo {
+  /* background-color: yellow; */
+  cursor: pointer;
+}
+
+.part2NavbarLogo.rotate {
+  transform: rotate(0deg);
+  animation: dragonSpin 2s;
+  animation-fill-mode: none;
+}
+
+@keyframes dragonSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.part2NavbarTitle {
+  font-family: "DragonStoneFont";
+  cursor: pointer;
+  line-height: 85%;
+}
+
+.part2NavbarBrandTable:hover h3 {
+  font-weight: 900;
+}
+
+.part2NavbarBrandTable:hover span {
+  font-weight: 900;
+}
+
+.part2NavbarBrandTable {
+  font-family: "DragonStoneFont";
+}
+
+.part2NavbarInteraction {
+  font-family: "DragonStoneFont";
+}
+
+.part2NavbarInteraction {
+  text-align: center;
+}
+
+.part2NavbarInteraction span:hover {
+  cursor: pointer;
+  font-weight: 900;
+}
+
+#part2MajorGreetings {
+  font-size: 400%;
+}
+
+#part2SubGreetings {
+  padding-right: 10%;
+  text-align: justify;
+}
+
+/* Default styles for the table */
+.part2Main table {
+  width: 100%;
+}
+
+.part2Main td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Responsive styles using media queries */
+@media only screen and (max-width: 768px) {
+  /* Set table cells to display block and add a border-bottom */
+  .part2Main td {
+    display: block;
+    width: 100% !important;
+  }
+
+  /* Add padding to the last cell to prevent the content from sticking to the side */
+  .part2Main td:last-child {
+    padding-bottom: 8px;
+  }
+}

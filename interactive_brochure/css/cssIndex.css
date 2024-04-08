@@ -1,0 +1,17 @@
+/* IMPORTS */
+@import url(cssGlobalVariables.css);
+
+/* PART1 */
+@import url(cssIndexPart1.css);
+/* .part1 {
+  display: none;
+} */
+
+/* PART2 */
+@import url(cssIndexPart2.css);
+
+/* PART3 */
+@import url(cssIndexPart3.css);
+
+/* PART4 */
+@import url(cssIndexPart4.css);

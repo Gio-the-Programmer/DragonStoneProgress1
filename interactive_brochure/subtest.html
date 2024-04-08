@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Dataset Tooltip Example</title>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <script>
+      var ctx = document.getElementById("myChart").getContext("2d");
+
+      // Sample data for datasets
+      var datasets = [
+        {
+          label: "Dataset 1",
+          data: [10, 20, 30, 40, 50],
+          borderColor: "red",
+          backgroundColor: "transparent",
+        },
+        {
+          label: "Dataset 2",
+          data: [15, 25, 30, 45, 55],
+          borderColor: "blue",
+          backgroundColor: "transparent",
+        },
+        {
+          label: "Dataset 2",
+          data: [18, 28, 30, 48, 55],
+          borderColor: "blue",
+          backgroundColor: "transparent",
+        },
+        // Add more datasets here as needed
+      ];
+
+      var labels = ["A", "B", "C", "D", "E"];
+
+      var chart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: datasets,
+        },
+        options: {
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                var label = data.datasets[tooltipItem.datasetIndex].label || "";
+                if (label) {
+                  label += ": ";
+                }
+                label += tooltipItem.yLabel;
+                // Add additional information from other datasets
+                for (var i = 0; i < data.datasets.length; i++) {
+                  if (i !== tooltipItem.datasetIndex) {
+                    label +=
+                      " (" +
+                      data.datasets[i].label +
+                      ": " +
+                      data.datasets[i].data[tooltipItem.index] +
+                      ")";
+                  }
+                }
+                return label;
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

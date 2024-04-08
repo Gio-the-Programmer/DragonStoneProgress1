@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "DragonStoneFont";
+  src: url("../styles/fonts/AceSans-Demo.otf");
+}
+
+li:nth-child(odd) {
+  color: #e87722; /* Odd numbered list items */
+}
+
+body,
+html {
+  overflow: hidden;
+  animation: allowScroll 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes allowScroll {
+  0% {
+    overflow: hidden;
+  }
+  90% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: scroll;
+  }
+}

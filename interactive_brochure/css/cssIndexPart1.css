@@ -1,0 +1,38 @@
+.part1 {
+  opacity: 0;
+  text-align: center;
+  /* background-color: yellow; */
+  animation: movepart1 4s;
+  animation-fill-mode: forwards;
+  z-index: 5;
+  position: absolute;
+}
+
+.part1CompensateAbsolute {
+  position: relative;
+}
+@keyframes movepart1 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.logoDragon {
+  max-width: 50vh;
+  max-height: 50vh;
+}
+
+#part1Title {
+  font-family: "DragonStoneFont";
+  font-weight: bolder;
+}
